@@ -1,0 +1,12 @@
+name: AngelCustomPotions
+version: @version@
+main: cz.angelo.angelcustompotions.Main
+api-version: 1.16
+authors: [ Angelo753 ]
+commands:
+  apotions:
+    aliases:
+      - custompotions
+      - angelcustompotions
+      - angelpotions
+      - cpotions

@@ -1,0 +1,28 @@
+messages:
+  permission: '&8(&6&oLektvary&8) &7Na tohle nemáš práva.'
+  arguments: '&8(&6&oLektvary&8) &7Špatné použití argumentů.'
+  give: '&8(&6&oLektvary&8) &7Bylo přidáno &6&o{AMOUNT}x &7lektvarů &6&o{POTION} &7hráči &6&o{PLAYER}&7.'
+  giveTarget: '&8(&6&oLektvary&8) &7Získal jsi &6&o{AMOUNT}x &7lektvarů &6&o{POTION}&7.'
+  potionDoesntExists: '&8(&6&oLektvary&8) &7Tento lektvar neexistuje.'
+  playerIsOffline: '&8(&6&oLektvary&8) &7Hráč &6&o{PLAYER} &7je offline.'
+potions:
+  hornik:
+    name: '&8(&6&oHorníkův lektvar&8)'
+    lore:
+      - '&7Efekty'
+      - '   &8■&6&oHaste &6&lII'
+      - '   &8■&6&oNight Vision &6&lI'
+    time: 600 #seconds
+    effects:
+      - 'fast_digging;1'
+      - 'night_vision;0'
+  utocnik:
+    name: '&8(&6&oÚtočníkův lektvar&8)'
+    lore:
+      - '&7Efekty'
+      - '   &8■&6&oStrength &6&lII'
+      - '   &8■&6&oSpeed &6&lI'
+    time: 600 #seconds
+    effects:
+      - 'INCREASE_DAMAGE;1'
+      - 'speed;0'
