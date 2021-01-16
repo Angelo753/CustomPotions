@@ -79,6 +79,7 @@ public final class Main extends JavaPlugin {
 			PotionEffect potionEffect = new PotionEffect(potionEffectType, Config.get().getInt("potions." + potion + ".time") * 20, level, true);
 			potionMeta.addCustomEffect(potionEffect, true);
 		}
+		potionMeta.setLore(lore);
 		potionMeta.setDisplayName(this.color(Config.get().getString("potions." + potion + ".name")));
 		itemStack.setItemMeta(potionMeta);
 		return itemStack;
