@@ -9,20 +9,15 @@ potions:
   hornik:
     name: '&8(&6&oHorníkův lektvar&8)'
     lore:
-      - '&7Efekty'
-      - '   &8■&6&oHaste &6&lII'
-      - '   &8■&6&oNight Vision &6&lI'
-    time: 600 #seconds
+      - '&7S tímto lektvarem budeš'
+      - '&7kopat jako ďas 10 minut.'
     effects:
-      - 'fast_digging;1'
-      - 'night_vision;0'
-  utocnik:
-    name: '&8(&6&oÚtočníkův lektvar&8)'
+      - 'fast_digging;1;600'
+      - 'night_vision;0;600'
+  rytir:
+    name: '&8(&6&oRytířův lektvar&8)'
     lore:
-      - '&7Efekty'
-      - '   &8■&6&oStrength &6&lII'
-      - '   &8■&6&oSpeed &6&lI'
-    time: 600 #seconds
+      - '&7S tímto lektvarem budeš kopat jako ďas 10 minut.'
     effects:
-      - 'INCREASE_DAMAGE;1'
-      - 'speed;0'
+      - 'INCREASE_DAMAGE;1;600'
+      - 'speed;0;600'

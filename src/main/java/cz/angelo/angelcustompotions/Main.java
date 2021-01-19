@@ -76,7 +76,7 @@ public final class Main extends JavaPlugin {
 			String[] effect = effects.split(";");
 			PotionEffectType potionEffectType = PotionEffectType.getByName(effect[0].toUpperCase());
 			int level = Integer.parseInt(effect[1]);
-			PotionEffect potionEffect = new PotionEffect(potionEffectType, Config.get().getInt("potions." + potion + ".time") * 20, level, true);
+			PotionEffect potionEffect = new PotionEffect(potionEffectType, Integer.parseInt(effect[2]) * 20, level, true);
 			potionMeta.addCustomEffect(potionEffect, true);
 		}
 		potionMeta.setLore(lore);
