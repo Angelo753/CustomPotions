@@ -6,6 +6,7 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
@@ -68,6 +69,26 @@ public final class Main extends JavaPlugin {
 		return false;
 	}
 
+	@Override
+	public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+		List<String> completions = new ArrayList<>();
+		if (args.length == 1){
+			completions.add("give");
+		}else if (args.length == 2){
+			ConfigurationSection configurationSection = Config.get().getConfigurationSection("potions");
+			for (String potions : configurationSection.getKeys(false)){
+				completions.add(potions);
+			}
+		}else if (args.length == 3){
+			for (int i = 1; i < 10; i++){
+				completions.add(String.valueOf(i));
+			}
+		}else if (args.length == 4){
+			return null;
+		}
+		return completions;
+	}
+
 	public ItemStack createPotion(String potion, int amount){
 		ItemStack itemStack = new ItemStack(Material.POTION, amount);
 		PotionMeta potionMeta = (PotionMeta) itemStack.getItemMeta();
@@ -85,7 +106,9 @@ public final class Main extends JavaPlugin {
 		potionMeta.setLore(lore);
 		potionMeta.setDisplayName(this.color(Config.get().getString("potions." + potion + ".name")));
 		PotionType potionType = PotionType.valueOf(Config.get().getString("potions." + potion + ".type"));
-		potionMeta.setBasePotionData(new PotionData(potionType, false, false));
+		//potionMeta.setBasePotionData(new PotionData(potionType, false, false));
+		//Color color = Config.get().getSr("potions." + potion + ".color");
+		potionMeta.setColor(potionType.getEffectType().getColor());
 		itemStack.setItemMeta(potionMeta);
 		return itemStack;
 	}
