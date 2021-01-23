@@ -2,6 +2,7 @@ package cz.angelo.angelcustompotions;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -9,8 +10,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.potion.PotionType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +84,8 @@ public final class Main extends JavaPlugin {
 		}
 		potionMeta.setLore(lore);
 		potionMeta.setDisplayName(this.color(Config.get().getString("potions." + potion + ".name")));
+		PotionType potionType = PotionType.valueOf(Config.get().getString("potions." + potion + ".type"));
+		potionMeta.setBasePotionData(new PotionData(potionType, false, false));
 		itemStack.setItemMeta(potionMeta);
 		return itemStack;
 	}

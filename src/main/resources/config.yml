@@ -7,6 +7,7 @@ messages:
   playerIsOffline: '&8(&6&oLektvary&8) &7Hráč &6&o{PLAYER} &7je offline.'
 potions:
   hornik:
+    type: SPEED
     name: '&8(&6&oHorníkův lektvar&8)'
     lore:
       - '&7S tímto lektvarem budeš'
